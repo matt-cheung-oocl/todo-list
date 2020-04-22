@@ -12,11 +12,12 @@ export default class TodoList extends Component {
   }
 
   render() {
-    const { todoList } = this.props;
+    const { todoList, onMarkAsDone } = this.props;
+
     return (
       <Space direction="vertical">
         {todoList.map((todo) => (
-          <TodoItem key={todo.index} todo={todo} />
+          <TodoItem key={todo.index} todo={todo} onMarkAsDone={onMarkAsDone} />
         ))}
       </Space>
     );

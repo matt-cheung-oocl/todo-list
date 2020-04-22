@@ -13,11 +13,10 @@ export default class TodoContainer extends Component {
     this.onMarkAsDone = this.onMarkAsDone.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
 
     this.state = {
-      todoList: INIT_TODO_LIST,
-      todoTask: INIT_TODO_TASK,
+      todoList: [],
+      todoTask: INIT_TODO_TASK
     };
   }
 
@@ -41,15 +40,22 @@ export default class TodoContainer extends Component {
 
   onSubmit(event) {
     event.preventDefault();
+    const { todoList } = this.state;
     if (this.state.todoTask != INIT_TODO_TASK) {
-      console.log(this.state.todoTask);
-      TodoApi.addNewTodoTask(this.state.todoTask).then(response => {
-        console.log(response.data);
+      const newTask = {
+        id: todoList.size,
+        content: this.state.todoTask,
+        status: true
+      };
+      const updatedTodoList = update(todoList, {
+        $push: [newTask]
       });
+      this.setState({ todoList: updatedTodoList });
+
+      TodoApi.addNewTodoTask(this.state.todoTask).then(response => {});
       this.setState({
         todoTask: INIT_TODO_TASK
       });
-      this.componentDidMount();
     }
   }
 
