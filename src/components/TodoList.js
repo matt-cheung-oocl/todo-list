@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Space } from "antd";
 import "antd/dist/antd.css";
 import TodoItem from "./TodoItem";
@@ -23,11 +22,3 @@ export default class TodoList extends Component {
     );
   }
 }
-
-TodoList.propTypes = {
-  todoList: PropTypes.arrayOf([
-    {
-      value: PropTypes.string
-    }
-  ])
-};

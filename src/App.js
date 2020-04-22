@@ -5,9 +5,9 @@ import TodoContainer from "./containers/TodoContainer";
 function App() {
   return (
     <div className="App">
-      <body className="App-body">
+      <div className="App-body">
         <TodoContainer />
-      </body>
+      </div>
     </div>
   );
 }

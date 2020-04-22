@@ -41,7 +41,7 @@ export default class TodoContainer extends Component {
   onSubmit(event) {
     event.preventDefault();
     const { todoList } = this.state;
-    if (this.state.todoTask != INIT_TODO_TASK) {
+    if (this.state.todoTask !== INIT_TODO_TASK) {
       const newTask = {
         id: todoList.size,
         content: this.state.todoTask,
