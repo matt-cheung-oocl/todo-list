@@ -36,7 +36,7 @@ export default class TodoItem extends Component {
           type="dashed"
           shape="round"
           block
-          style={{ width: 350, textAlign: 'left' }}
+          style={{ width: 350, textAlign: "left" }}
         >
           <div onClick={this.onClickDone}>{todo.content}</div>
         </Button>

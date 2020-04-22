@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { INIT_TODO_LIST, INIT_TODO_TASK } from "../constants/constant";
+import { INIT_TODO_TASK } from "../constants/constant";
 import TodoList from "../components/TodoList";
 import update from "immutability-helper";
 import { Card, Input, Space } from "antd";
@@ -31,7 +31,7 @@ export default class TodoContainer extends Component {
     const { todoList } = this.state;
     const todo = todoList[index];
     const updatedTodoList = update(todoList, {
-      [index]: { $merge: { done: !todo.done } }
+      [index]: { $merge: { status: !todo.status } }
     });
     this.setState({
       todoList: updatedTodoList
@@ -79,10 +79,7 @@ export default class TodoContainer extends Component {
               value={this.state.todoTask}
               onChange={this.onChange}
             />
-            <button
-              type="submit"
-              // shape="circle"
-            >
+            <button type="submit">
               <PlusOutlined />
             </button>
           </form>

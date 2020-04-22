@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Space } from "antd";
 import "antd/dist/antd.css";
 import TodoItem from "./TodoItem";
@@ -16,7 +16,7 @@ export default class TodoList extends Component {
 
     return (
       <Space direction="vertical">
-        {todoList.map((todo) => (
+        {todoList.map(todo => (
           <TodoItem key={todo.index} todo={todo} onMarkAsDone={onMarkAsDone} />
         ))}
       </Space>
@@ -27,7 +27,7 @@ export default class TodoList extends Component {
 TodoList.propTypes = {
   todoList: PropTypes.arrayOf([
     {
-      value: PropTypes.string,
-    },
-  ]),
+      value: PropTypes.string
+    }
+  ])
 };
