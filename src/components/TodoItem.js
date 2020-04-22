@@ -17,7 +17,7 @@ export default class TodoItem extends Component {
 
   onClickDone(event) {
     event.target.classList.toggle("crossed-line");
-    this.onMarkAsDone(this.props.todo.id);
+    this.props.onMarkAsDone(this.props.todo.id);
   }
 
   removeTodoItem() {
@@ -32,7 +32,12 @@ export default class TodoItem extends Component {
     }
     return (
       <Space>
-        <Button type="dashed" shape="round" block style={{ width: 350 }}>
+        <Button
+          type="dashed"
+          shape="round"
+          block
+          style={{ width: 350, textAlign: 'left' }}
+        >
           <div onClick={this.onClickDone}>{todo.content}</div>
         </Button>
         <Popconfirm

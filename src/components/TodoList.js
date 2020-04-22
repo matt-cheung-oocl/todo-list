@@ -15,7 +15,7 @@ export default class TodoList extends Component {
     const { todoList } = this.props;
     return (
       <Space direction="vertical">
-        {todoList.map(todo => (
+        {todoList.map((todo) => (
           <TodoItem key={todo.index} todo={todo} />
         ))}
       </Space>
