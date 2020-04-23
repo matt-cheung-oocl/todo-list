@@ -16,7 +16,7 @@ export default class TodoList extends Component {
     return (
       <Space direction="vertical">
         {todoList.map(todo => (
-          <TodoItem key={todo.index} todo={todo} onMarkAsDone={onMarkAsDone} />
+          <TodoItem key={todo.id} todo={todo} onMarkAsDone={onMarkAsDone} />
         ))}
       </Space>
     );
