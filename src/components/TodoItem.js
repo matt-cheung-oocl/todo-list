@@ -20,7 +20,7 @@ export default class TodoItem extends Component {
     this.props.onMarkAsDone(this.props.todo.id);
   }
 
-  removeTodoItem() {
+  removeTodoItem(event) {
     this.setState({ isExisting: false });
     message.success("The item is sucessfully deleted.");
   }

@@ -36,6 +36,7 @@ export default class TodoContainer extends Component {
     this.setState({
       todoList: updatedTodoList
     });
+    //TODO: api update status
   }
 
   onSubmit(event) {
@@ -65,12 +66,14 @@ export default class TodoContainer extends Component {
     });
   }
 
+  //TODO: onDelete()
+
   render() {
     return (
       <Space direction="vertical">
         <Card
           title="To-Do List"
-          style={{ width: 350, height: 150, background: "grey" }}
+          style={{ width: 350, height: 180, background: "grey" }}
         >
           <form onSubmit={this.onSubmit}>
             <Input
@@ -78,7 +81,7 @@ export default class TodoContainer extends Component {
               type="text"
               value={this.state.todoTask}
               onChange={this.onChange}
-            />
+            /><br/><br/>
             <button type="submit">
               <PlusOutlined />
             </button>
